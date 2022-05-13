@@ -1,0 +1,19 @@
+.control_el {
+    width: 100%;
+    margin: 30px 20px;
+}
+
+.control_el button {
+    width: 100%;
+    border: 1px solid var(--component-background-default);
+    background-color: var(--component-background-default);
+    box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+    color: var(--text-background-default);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.control_active button {
+    border: 1px solid rgb(4, 194, 194);
+    background-color: rgb(4, 194, 194);
+}

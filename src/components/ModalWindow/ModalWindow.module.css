@@ -1,0 +1,101 @@
+.modal_backdrop {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+}
+
+.modal_content_wrapper {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: white;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 150;
+}
+
+.lines {
+    margin: 20px 0;
+    border-top: 1px solid grey;
+}
+
+.form__el label {
+    font-size: 18px;
+}
+
+.form__el_wrapper {
+    position: relative;
+}
+
+.form__input_limit {
+    position: absolute;
+    top: calc(50% - 35px/4);
+    right: 5px;
+}
+
+.form__textarea_limit {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.taskName input{
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+    color: rgb(75, 73, 73);
+}
+
+.taskName {
+    margin-bottom: 20px;
+}
+
+.description textarea{
+    width: 100%;
+    height: 200px;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.modal__footer {
+    display: flex;
+    justify-content: right;
+}
+
+.footer__cancel {
+    margin-left: 10px;
+}
+
+.modal__footer button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+}
+
+.footer__cancel button {
+    border: 1px solid grey;
+    background-color: grey;
+}
+
+.limit_active {
+    color: red
+}
+
+.create_unable {
+    border: 1px solid rgb(4, 194, 194);
+    background-color: rgb(4, 194, 194);
+}
+
+.create_disabled {
+    border: 1px solid grey;
+    background-color: grey;
+}

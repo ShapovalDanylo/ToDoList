@@ -1,0 +1,13 @@
+.taskList_wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 1em;
+    justify-items: center;
+    align-items: center;
+    background-color: var(--component-background-default);
+    box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+    height: auto;
+    padding: 20px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
