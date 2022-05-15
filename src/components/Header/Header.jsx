@@ -1,12 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './Header.module.css';
 
 const Header = () => {
 
     const [theme, setTheme] = useState('light');
     
-    const checkbox = useRef();
-
     const changeTheme = () => {
         setTheme(theme === 'light' ? 'dark' : 'light')
     }
@@ -26,7 +24,7 @@ const Header = () => {
                 <h1>To Do List</h1>
             </div>
             <div className={classes.themeChange}>
-                <input ref={checkbox} type="checkbox" id="checkbox" className={classes.checkbox} onChange={changeTheme}/>
+                <input type="checkbox" id="checkbox" className={classes.checkbox} onChange={changeTheme}/>
                 <label htmlFor="checkbox" className={classes.label}> 
                     <i className='fas fa-moon' style={{"color": "#f1c40f"}}/>
                     <i className='fas fa-sun' style={{"color": "#f39c12"}}/>
