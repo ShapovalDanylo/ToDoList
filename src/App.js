@@ -57,7 +57,7 @@ function App() {
           setButton={setButton}
           button={button}
         />
-        <TaskList filtered={filtered} deleteTask={deleteTask} updateListArr={updateListArr} updateTaskStatus={updateTaskStatus}/>
+        <TaskList filtered={filtered} deleteTask={deleteTask} updateListArr={updateListArr} updateTaskStatus={updateTaskStatus} button={button}/>
       </div>  
       <AnimatePresence>
         { modal && <ModalWindow setModal={setModal} addTask={addTask}/>}
