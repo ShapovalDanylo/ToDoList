@@ -41,7 +41,6 @@ function App() {
 
   const updateTaskStatus = task => {
     taskList.filter( el => el.id === task.id)[0].isDone = !taskList.filter( el => el.id === task.id)[0].isDone
-    console.log(task);
     localStorage.setItem("taskList", JSON.stringify([...taskList]))
     setTaskList([...taskList])
   }
