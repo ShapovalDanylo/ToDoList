@@ -12,7 +12,7 @@
     position: fixed;
     width: 500px;
     height: 500px;
-    background: white;
+    background: var(--component-background-default);
     margin: auto;
     top: 0;
     left: 0;
@@ -25,11 +25,13 @@
 
 .lines {
     margin: 20px 0;
-    border-top: 1px solid grey;
+    border-top: 1px solid var(--text-background-default);
+    background-color: var(--text-background-default);
 }
 
 .form__el label {
     font-size: 18px;
+    color: var(--text-background-default);
 }
 
 .form__el_wrapper {
@@ -40,23 +42,33 @@
     position: absolute;
     top: calc(50% - 35px/4);
     right: 5px;
+    color: var(--text-background-default);
 }
 
 .form__textarea_limit {
     position: absolute;
     bottom: 10px;
     right: 10px;
+    color: var(--text-background-default);
 }
 
 .taskName input{
     width: 100%;
     padding: 5px;
     font-size: 18px;
-    color: rgb(75, 73, 73);
+    color: var(--text-background-default);
+    background-color: var(--card-background-default);
+    outline: none;
+    border-radius: 5px;
+    border: none;
 }
 
 .taskName {
     margin-bottom: 20px;
+}
+
+.modal__header h1{
+    color: var(--text-background-default);
 }
 
 .description textarea{
@@ -64,6 +76,11 @@
     height: 200px;
     font-size: 20px;
     padding: 5px;
+    background-color: var(--card-background-default);
+    color: var(--text-background-default);
+    outline: none;
+    border-radius: 5px;
+    border: none;
 }
 
 .modal__footer {

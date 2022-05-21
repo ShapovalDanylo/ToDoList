@@ -20,6 +20,7 @@ const TaskListItem = ({task, deleteTask, updateListArr, updateTaskStatus}) => {
         updateTaskStatus(task)
     }
 
+
     return (
         <>
             <div 
