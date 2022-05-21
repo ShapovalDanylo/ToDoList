@@ -4,8 +4,6 @@ import classes from './TaskList.module.css';
 
 const TaskList = ({filtered, deleteTask, updateListArr, updateTaskStatus, button}) => {
 
-    console.log(filtered)
-
     return (
         <div className={filtered.length ? `${classes.taskList_wrapper}` : `${classes.ifNone}`}>
             {filtered.length ? 
