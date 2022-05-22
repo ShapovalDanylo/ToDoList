@@ -11,7 +11,7 @@ const Header = () => {
 
     useEffect( () => {
         const root = document.querySelector(':root');
-        const components = ['body-background', 'component-background', 'text-background', 'card-background'];
+        const components = ['body-background', 'component-background', 'text-background', 'card-background', 'highlight-background'];
 
         components.forEach( component => {
             root.style.setProperty(`--${component}-default`, `var(--${component}-${theme})`)

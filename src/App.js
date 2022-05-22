@@ -12,6 +12,7 @@ function App() {
   const [taskList, setTaskList] = useState([]);
   const [filtered, setFiltered] = useState(taskList);
   const [button, setButton] = useState('all');
+  const [value, setValue] = useState('');
 
   useEffect( () => {
     JSON.parse(localStorage.getItem("taskList")) && setTaskList(JSON.parse(localStorage.getItem("taskList")))
@@ -45,6 +46,22 @@ function App() {
     setTaskList([...taskList])
   }
 
+  const highlight = (searchValue, string) => {
+    if(!filtered) return string
+    const regexp = new RegExp(searchValue, 'ig')
+    const matchedValue = string.match(regexp)
+    if(matchedValue) {
+      return string.split(regexp).map((symbol, index, array) => {
+        if(index < array.length - 1) {
+          const firstMatch = matchedValue.shift()
+          return <>{symbol}<span className='highlight'>{firstMatch}</span></>
+        }
+        return symbol
+      })
+    }
+    return string
+  }
+
   return (
     <>
       <div className="container">
@@ -55,8 +72,17 @@ function App() {
           taskList={taskList}
           setButton={setButton}
           button={button}
+          setValue={setValue}
         />
-        <TaskList filtered={filtered} deleteTask={deleteTask} updateListArr={updateListArr} updateTaskStatus={updateTaskStatus} button={button}/>
+        <TaskList 
+          filtered={filtered} 
+          deleteTask={deleteTask} 
+          updateListArr={updateListArr} 
+          updateTaskStatus={updateTaskStatus}
+           button={button}
+           value={value}
+           highlight={highlight}
+        />
       </div>  
       <AnimatePresence>
         { modal && <ModalWindow setModal={setModal} addTask={addTask}/>}

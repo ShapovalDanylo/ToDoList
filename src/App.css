@@ -14,6 +14,10 @@ body {
   font-family: 'Oleo Script';
 }
 
+.highlight {
+  background: var(--highlight-background-default)
+}
+
 :root {
 
   --body-background-dark: #2E3035;
@@ -31,5 +35,9 @@ body {
   --card-background-dark: #2E3035;
   --card-background-light: rgba(71, 147, 255, 0.2);
   --card-background-default: var(--card-background-light);
+
+  --highlight-background-dark: #FFA500;
+  --highlight-background-light: #FFFF00;
+  --highlight-background-default: var(--highlight-background-light);
 
 }

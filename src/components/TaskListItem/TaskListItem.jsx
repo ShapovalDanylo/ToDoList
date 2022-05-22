@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import classes from './TaskListItem.module.css';
 import ModalWindow from '../ModalWindow/ModalWindow';
 import { AnimatePresence } from 'framer-motion';
 
-const TaskListItem = ({task, deleteTask, updateListArr, updateTaskStatus}) => {
+const TaskListItem = ({task, deleteTask, updateListArr, updateTaskStatus, value, highlight}) => {
 
     const [modal, setModal] = useState(false);
 
@@ -20,6 +20,7 @@ const TaskListItem = ({task, deleteTask, updateListArr, updateTaskStatus}) => {
         updateTaskStatus(task)
     }
 
+    const enlighten = useCallback(string => highlight(value, string), [value])
 
     return (
         <>
@@ -29,11 +30,11 @@ const TaskListItem = ({task, deleteTask, updateListArr, updateTaskStatus}) => {
             >
                 <div className={classes.item_content}>
                     <div className={classes.item__header}>
-                        <h2>{task.name}</h2>
+                        <h2>{enlighten(task.name)}</h2>
                     </div>
                     <hr className={classes.hr_line} style={{border: `1px solid ${task.color}`,backgroundColor: `${task.color}`}}/>
                     <div className={classes.item__body}>
-                        <p>{task.description}</p>
+                        <p>{enlighten(task.description)}</p>
                     </div>
                     <hr className={classes.hr_line} style={{border: `1px solid ${task.color}`,backgroundColor: `${task.color}`}}/>
                     <div className={classes.item__footer}>
