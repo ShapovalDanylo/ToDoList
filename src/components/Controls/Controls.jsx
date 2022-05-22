@@ -2,7 +2,7 @@ import React, { useEffect, useMemo } from 'react';
 import classes from './Controls.module.css';
 import ControlItem from '../ControlItem/ControlItem';
 
-const Controls = ({setModal, setFiltered, taskList, button, setButton, setValue}) => {
+const Controls = ({setModal, setFiltered, taskList, button, setButton, setValue, value}) => {
 
     const completed = useMemo(() => taskList.filter(task => task.isDone), [taskList])
     const uncompleted = useMemo(() => taskList.filter( task => !task.isDone), [taskList])
@@ -50,7 +50,7 @@ const Controls = ({setModal, setFiltered, taskList, button, setButton, setValue}
                 {controls.map( (control, index) => <ControlItem key={index} control={control} button={button}/>)}
             </div>
             <div className={classes.search_wrapper}>
-                <input className={classes.search} type="text" placeholder='Search...' onChange={e => setValue(e.target.value)}></input>
+                <input className={classes.search} type="text" placeholder='Search...' value={value} onChange={e => setValue(e.target.value)}></input>
                 <i className="fa-solid fa-magnifying-glass" />
             </div>
         </>

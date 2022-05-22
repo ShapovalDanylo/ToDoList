@@ -21,6 +21,7 @@ function App() {
   useEffect( () => {
     setFiltered(taskList)
     setButton('all')
+    setValue('')
   }, [taskList.length])
 
   const addTask = task => {
@@ -47,7 +48,7 @@ function App() {
   }
 
   const highlight = (searchValue, string) => {
-    if(!filtered) return string
+    if(!filtered || !string) return string
     const regexp = new RegExp(searchValue, 'ig')
     const matchedValue = string.match(regexp)
     if(matchedValue) {
@@ -73,6 +74,7 @@ function App() {
           setButton={setButton}
           button={button}
           setValue={setValue}
+          value={value}
         />
         <TaskList 
           filtered={filtered} 
