@@ -27,4 +27,5 @@
     top: 8px;
     right: 30px;
     color: var(--text-background-default);
+    cursor: pointer;
 }
